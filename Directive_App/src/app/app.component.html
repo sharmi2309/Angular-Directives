@@ -1,0 +1,35 @@
+<h1 id="heading">Directives</h1>
+<div class="container">
+  <div class="row">
+    <div class="cols-md-6">
+      <button class="btn btn-success " [ngClass]="{'active':chosenum===2}" (click)="calculate(2)">Number Divisible by 2</button>
+    </div>
+    <div class="cols-md-6">
+      <button class="btn btn-success " [ngClass]="{'active':chosenum===3}" (click)="calculate(3)">Number Divisible by 3</button>
+    </div>
+    <div class="cols-md-6">
+      <button class="btn btn-success " [ngClass]="{'active':chosenum===5}" (click)="calculate(5)">Number Divisible by 5</button>
+    </div>
+    <div class="cols-md-6">
+      <button class="btn btn-success " [ngClass]="{'active':chosenum===10}" (click)="calculate(10)">Number Divisible by 10</button>
+    </div>
+    <div>
+      <button class="btn btn-danger" [disabled]="iscleardisabled" (click)="calculate(1)"> Clear</button>
+    </div>
+    <div class="cols-md-6">    
+        <p *ngFor="let num of numbers"
+           [ngClass]="{highlight: num % chosenum === 0 && chosenum > 1}"
+           [ngStyle]="{'font-size': (num % chosenum === 0 && chosenum > 1) ? '25px' : '20px'}">
+          {{ num }}
+        </p>
+    
+    </div>
+  </div>
+</div>
+ 
+
+  
+
+
+
+
